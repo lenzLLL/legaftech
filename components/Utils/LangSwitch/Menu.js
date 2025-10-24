@@ -9,7 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useRouter } from 'next/router';
 import languageDetector from 'lib/languageDetector';
 import i18nextConfig from '../../../next-i18next.config';
-
+import ReactCountryFlag from "react-country-flag";
 const LanguageSwitch = ({
   locale,
   checked,
@@ -20,7 +20,7 @@ const LanguageSwitch = ({
   const router = useRouter();
   const { t } = useTranslation('common');
 
-  const changeLang = lang => {
+const changeLang = lang => {
     languageDetector.cache(lang);
     closePopup();
 
@@ -43,10 +43,19 @@ const LanguageSwitch = ({
       router.push({ pathname, query }, asPath, { locale: lang });
     }
 
-    if (lang === 'ar') {
-      toggleDir('rtl');
-    } else {
-      toggleDir('ltr');
+    toggleDir(lang === 'ar' ? 'rtl' : 'ltr');
+  };
+
+    const getCountryCode = (lang) => {
+    switch (lang) {
+      case 'fr':
+        return 'FR'; // 🇫🇷
+      case 'en':
+        return 'GB'; // 🇬🇧 ou 'US' si tu préfères 🇺🇸
+      case 'ar':
+        return 'SA'; // 🇸🇦
+      default:
+        return 'US';
     }
   };
 
@@ -58,7 +67,16 @@ const LanguageSwitch = ({
       onClick={() => changeLang(locale)}
     >
       <ListItemIcon className="flag">
-        <i className={locale} />
+         <ReactCountryFlag
+          countryCode={getCountryCode(locale)}
+          svg
+          style={{
+            width: '1.5em',
+            height: '1.5em',
+            borderRadius: '50%',
+          }}
+          title={locale}
+        />
       </ListItemIcon>
       <ListItemText primary={t(locale)} />
       {checked && (
@@ -75,7 +93,16 @@ const LanguageSwitch = ({
       onClick={() => changeLang(locale)}
     >
       <ListItemIcon className="flag">
-        <i className={locale} />
+         <ReactCountryFlag
+          countryCode={getCountryCode(locale)}
+          svg
+          style={{
+            width: '1.5em',
+            height: '1.5em',
+            borderRadius: '50%',
+          }}
+          title={locale}
+        />
       </ListItemIcon>
       <ListItemText primary={t(locale)} />
       {checked && (

@@ -367,11 +367,11 @@ const imgAPI = {
       "/images/portfolio/p2.PNG",
       "/images/portfolio/p3.PNG",
       "/images/portfolio/p4.PNG",
-      "/images/portfolio/pm12.PNG",
-      "/images/portfolio/pm13.PNG",
-      "/images/portfolio/pm16.PNG",
-      "/images/portfolio/pm17.PNG",
-      "/images/portfolio/pm18.PNG",
+      "/images/portfolio/pm12.png",
+      "/images/portfolio/pm13.png",
+      "/images/portfolio/pm16.png",
+      "/images/portfolio/pm17.png",
+      "/images/portfolio/pm18.png",
   ]
 };
 
