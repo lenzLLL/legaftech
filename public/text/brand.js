@@ -5,7 +5,7 @@ const brand = {
   profileName: 'LEGAF',
   profileTitle: 'NFT Artist',
   profileTitle2: 'Content Creator',
-  desc: 'React Website Template',
+  desc: 'Start-up digital ',
   title: 'Website Template',
   prefix: 'ar',
   footerText: 'LEGAF 2025',
