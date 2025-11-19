@@ -142,7 +142,7 @@ function MixedMobile(props) {
                   <ListItem
                     button
                     component="a"
-                    href={`${item.id}`}
+                    href={`/${item.id}`}
                     onClick={toggleDrawer}
                     onKeyDown={toggleDrawer}
                   >
